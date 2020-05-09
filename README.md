@@ -9,6 +9,9 @@ command line and scraping tool to collect github repo efficiently
 
 ![m2](https://user-images.githubusercontent.com/29950288/81474866-220d9100-9243-11ea-8512-3f01b2541af6.gif)
 
+# Environment
+mac
+
 # Prerequisites
 
 chrome web browser
