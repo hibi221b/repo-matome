@@ -12,10 +12,6 @@ command line and scraping tool to collect github repo efficiently
 # Environment
 mac
 
-# Prerequisites
-
-chrome web browser
-
 # How to install and run
 
 1. `git clone https://github.com/hibi221b/repo-matome.git`
