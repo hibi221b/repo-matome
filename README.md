@@ -194,5 +194,7 @@ info: 28 repositories acquired. ($HOME/Downloads/repo-matome-result-dir/xxxxx.js
 ----------------------------------------------------------------------------
 
 info: scraping successfully finished.
+
+//linux user open index.html manually
 info: open /Users/hibi221b/Downloads/repo-matome-result-dir/index.html
 ```
