@@ -94,7 +94,7 @@ pub const REPO_MATOME_INDEX_HTML: &'static str =r###"<!DOCTYPE html>
                 topic: "-topic_"
             };
 
-            if(!selectedJsonFile.includes(jsonPathRegex.number) || !selectedJsonFile.includes(jsonPathRegex.lang) || !selectedJsonFile.includes(jsonPathRegex.range) || selectedJsonFile.includes(jsonPathRegex.topic)) {
+            if(!selectedJsonFile.includes(jsonPathRegex.number) || !selectedJsonFile.includes(jsonPathRegex.lang) || !selectedJsonFile.includes(jsonPathRegex.range) || !selectedJsonFile.includes(jsonPathRegex.topic)) {
                 //unexpected json file 
                 window.alert("select $HOME/Downloads/repo-matome-result-dir/XXXXX.json");
 
