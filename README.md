@@ -143,7 +143,7 @@ $ headless mode
 
 # Result
 
-- save Rust repositories with more than 10000 stars in json files. (The language and number of stars can be changed. The maximum number of repositories that can be retrieved is 100.)
+- save Rust repositories with more than 1000 stars in json files. (The language and number of stars can be changed. The maximum number of repositories that can be retrieved is 100.)
 - create a repo-matome-result-dir directory under $HOME/Downloads.
 - create a new index.html there.
 - open $HOME/Downloads/repo-matome-result-dir/index.html local file.
