@@ -134,7 +134,7 @@ fn main() {
     println!("{}", PROGRAM_MESSAGE);
 
     println!("{}", SELECT_LANGUAGES);
-    println!("{} {}", style("▼ select number 1 ~").cyan(), style(LANG.len()).cyan());
+    println!("{} {}", style("▼ select number 1 ~ 28").cyan(), style(LANG.len()).cyan());
     let lang: String = select_languages();
 
     println!("\n{}", SELECT_BOUND);
