@@ -27,7 +27,7 @@ FLAGS:
 
 ```
 
-# How to use `repo-matome`
+# How to use this command
 
 this example collect a repository of the rustlang with over 1000 stars, save it into a JSON file, and open it in index.html
 
