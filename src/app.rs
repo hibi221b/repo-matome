@@ -79,7 +79,7 @@ impl App {
 
 impl App {
     pub fn push_search_queries(&mut self) {
-        if self.topic == "\n".to_string() || self.topic == "\r\n".to_string() {
+        if self.topic == "".to_string() {
             self.search_queries = format!("language:{} stars:{}..{}",
                 self.search_lang, self.lower_bound, self.upper_bound
             );
