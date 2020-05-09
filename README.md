@@ -5,7 +5,12 @@ command line and scraping tool to collect github repo efficiently
 
 ![movie](https://user-images.githubusercontent.com/29950288/81474529-00130f00-9241-11ea-8c56-c06153cc6d2b.gif)
 
+## Open $HOME/Downloads/repo-matome-result-dir/index.html
+
+![m2](https://user-images.githubusercontent.com/29950288/81474866-220d9100-9243-11ea-8512-3f01b2541af6.gif)
+
 # Prerequisites
+
 chrome web browser
 
 # How to install and run
