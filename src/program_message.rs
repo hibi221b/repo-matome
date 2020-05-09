@@ -1,11 +1,11 @@
 pub const PROGRAM_MESSAGE: &'static str = r###"$ run repo-matome
 
-    #1. create $HOME/Downloads/repo-matome (if the directory exists, this phase skip)
-    #2. create $HOME/Downloads/repo-matome/index.html (if the index.html exists, this phase skip)
+    #1. create $HOME/Downloads/repo-matome-result-dir (if the directory exists, this phase skip)
+    #2. create $HOME/Downloads/repo-matome-result-dir/index.html (if the index.html exists, this phase skip)
     #3. scraping https://github.com and collect up to `100` repositories
-    #4. save json file at $HOME/Downloads/repo-matome/XXXXX.json
+    #4. save json file at $HOME/Downloads/repo-matome-result-dir/XXXXX.json
     --- open index.html (if you are linux user, open index.html manually) --- 
-    #5. select $HOME/Downloads/repo-matome/XXXXX.json
+    #5. select $HOME/Downloads/repo-matome-result-dir/XXXXX.json
     #6. print json data.
 "###;
 
