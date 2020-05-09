@@ -10,6 +10,23 @@ chrome web browser
 2. `cd repo-matome`
 3. `cargo run`
 
+# Usage
+
+```console
+repo-matome 0.1.0
+hibi221b
+repo-matome efficiently collects github repositories, saves the results in json file, and displays them in index.html
+under the Donwload directory.
+
+USAGE:
+    repo-matome
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+```
+
 # How to use `repo-matome`
 
 ## First
@@ -113,3 +130,48 @@ $ headless mode
   <---------------- if you press enter, hide chrome browser
 ```
 
+# Result
+
+- save Rust repositories with more than 10000 stars in json files. (The language and number of stars can be changed. The maximum number of repositories that can be retrieved is 100.)
+- create a repo-matome directory under $HOME/Downloads.
+- create a new index.html there.
+- open $HOME/Downloads/repo-matome/index.html local file.
+- select the json file that contains the information obtained by scraping.
+- display the contents on the browser.
+
+```console
+headless_mode: true
+search query:  language:Rust stars:10000..*
+============================================================================
+
+info: setup successfully finished
+
+info: 12 repository results
+----------------------------------------------------------------------------
+
+info: hit! 10 repositories
+info: 1 page now
+get:  https://github.com/996icu/996.ICU
+get:  https://github.com/rust-lang/rust
+get:  https://github.com/alacritty/alacritty
+get:  https://github.com/BurntSushi/ripgrep
+get:  https://github.com/sharkdp/bat
+get:  https://github.com/xi-editor/xi-editor
+get:  https://github.com/servo/servo
+get:  https://github.com/rust-unofficial/awesome-rust
+get:  https://github.com/libra/libra
+get:  https://github.com/sharkdp/fd
+info: go to the next page
+
+info: hit! 2 repositories
+info: 2 page now
+get:  https://github.com/firecracker-microvm/firecracker
+get:  https://github.com/yewstack/yew
+
+info: 12 repositories acquired. ($HOME/Downloads/repo-matome/xxxxx.json)
+----------------------------------------------------------------------------
+
+info: scraping successfully finished.
+info: open /Users/hibi221b/Downloads/repo-matome/index.html
+
+```
