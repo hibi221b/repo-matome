@@ -6,7 +6,7 @@ chrome web browser
 
 # How to install and run
 
-1. `$ git clone https://github.com/hibi221b/repo-matome.git`
+1. `git clone https://github.com/hibi221b/repo-matome.git`
 2. `cd repo-matome`
 3. `cargo run`
 
