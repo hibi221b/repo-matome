@@ -1,0 +1,22 @@
+[package]
+name = "repo-matome"
+version = "0.1.0"
+authors = ["hibi221b"]
+edition = "2018"
+license = "MIT"
+description = "repo-matome efficiently collects github repositories, saves the results in json file, and displays them in index.html under the Donwload directory."
+readme = "README.md"
+repository = "https://github.com/hibi221b/repo-matome"
+category = ["command-line-utilities"]
+keywords = ["cli", "scraping", "github"]
+
+[dependencies]
+clap = "2.33.0"
+dirs = "2.0.2"
+lazy_static = "1.4.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+console = "0.11.2"
+failure = "0.1.7"
+chrono = "0.4.11"
+headless_chrome = "0.9.0"
