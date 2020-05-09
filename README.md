@@ -3,6 +3,7 @@ command line and scraping tool to collect github repo efficiently
 
 # Demo
 
+![movie](https://user-images.githubusercontent.com/29950288/81474529-00130f00-9241-11ea-8c56-c06153cc6d2b.gif)
 
 # Prerequisites
 chrome web browser
