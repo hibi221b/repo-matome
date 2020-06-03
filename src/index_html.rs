@@ -103,7 +103,6 @@ pub const REPO_MATOME_INDEX_HTML: &'static str =r###"<!DOCTYPE html>
                 pTagJsonFile.textContent = selectedJsonFile;
 
                 //- if the contents of json are already visible on index.html, delete them.
-                //- when there is h3 message, delete one (select unexpected json file)
                 if(document.getElementById("topDivId") != null) {
                     main.removeChild(document.getElementById("topDivId"));
                 }

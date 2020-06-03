@@ -3,6 +3,8 @@ use crate::app::JsonContents;
 use crate::app::App;
 
 use std::path::Path;
+use std::thread;
+use std::time::Duration;
 
 use serde_json::value;
 use headless_chrome::{
@@ -26,7 +28,7 @@ pub fn scraping_github(app: &mut App, chrome_abs_path: &Path) -> Result<(), fail
     //search repo
     tab.type_str(&app.search_queries)?.press_key("Enter")?;
 
-    std::thread::sleep(std::time::Duration::from_secs(2));    
+    thread::sleep(Duration::from_secs(2));    
 
     if let Err(e) = tab.wait_for_element(HIT_REPOSITORY_SELECTOR) {
         eprintln!("\ncannot find repository... match 0");
@@ -47,7 +49,7 @@ pub fn scraping_github(app: &mut App, chrome_abs_path: &Path) -> Result<(), fail
     
     loop {
         tab.wait_for_element(HIT_REPOSITORY_SELECTOR)?;
-        std::thread::sleep(std::time::Duration::from_secs(5));
+        thread::sleep(Duration::from_secs(5));
 
         target_element = tab.wait_for_elements(LENGTH_OF_ELEMENTS)?;
         println!("{} hit! {} repositories", style("info:").green(), target_element.len());

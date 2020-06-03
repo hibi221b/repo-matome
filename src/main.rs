@@ -26,32 +26,28 @@ use select_bound::{select_lower_bound, select_uppder_bound};
 use select_topic::select_topic;
 use select_headless_mode::select_headless_mode;
 
-use std::fs;
+use std::fs::{self, File};
 use std::io;
 use std::io::{Write};
 use std::path::{Path};
 use std::process;
+use std::thread;
+use std::time::Duration;
 
 use console::style;
 use chrono::Local;
 use headless_chrome::browser;
 
-fn create_dir(path: &Path) -> io::Result<()> {
-    fs::create_dir(path)?;
-    Ok(())
-}
-
 fn setup_environment() -> io::Result<()> {
     if !REPO_MATOME_DIR_PATH.exists() {
-        create_dir(REPO_MATOME_DIR_PATH.as_path())?;
+        fs::create_dir(REPO_MATOME_DIR_PATH.as_path())?;
     }
 
     if !INDEX_HTML_PATH.exists() {
-        let mut index_html = fs::File::create(INDEX_HTML_PATH.as_path())?;
+        let mut index_html = File::create(INDEX_HTML_PATH.as_path())?;
         index_html.write_all(REPO_MATOME_INDEX_HTML.as_bytes())?;
     }
 
-    println!("\n{} setup successfully finished", style("info:").green());
     Ok(())
 }
 
@@ -92,7 +88,7 @@ fn create_json_file(app: &App, file_number: u64) -> io::Result<()> {
     abs_json_path.push(json_path);
 
     let serialize = serde_json::to_vec_pretty(&app.contents)?;
-    let mut file = std::fs::File::create(&abs_json_path)?;
+    let mut file = File::create(&abs_json_path)?;
     file.write_all(&serialize)?;
 
     Ok(())
@@ -177,6 +173,7 @@ fn main() {
     println!("============================================================================");
 
     setup_environment().expect("cannot set up environment...");
+    println!("\n{} setup successfully finished", style("info:").green());
         
     if let Err(e) = scraping_github(&mut app, &chrome_path) {
         eprintln!("{}", e);
@@ -188,6 +185,6 @@ fn main() {
     create_json_file(&app, check_file_number).expect("cannot create json file");
 
     println!("{} open {}", style("info:").green(), &INDEX_HTML_PATH.to_str().unwrap());
-    std::thread::sleep(std::time::Duration::from_secs(3));
+    thread::sleep(Duration::from_secs(3));
     spawn_index_html(&INDEX_HTML_PATH);
 }
